@@ -17,7 +17,7 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.posting_modify_submit_post_before'	=> 'locked_means_locked',
+			'core.modify_posting_auth'	=> 'locked_means_locked',
 		);
 	}
 
@@ -27,7 +27,8 @@ class listener implements EventSubscriberInterface
 	
 	public function locked_means_locked($event)
 	{
-		if ($event['data']['topic_status'] == ITEM_LOCKED && ($event['mode'] == 'reply' || $event['mode'] = 'quote') && isset($_POST['lock_topic']))
+		global $post_data;
+		if (isset($post_data['topic_status']) && $post_data['topic_status'] == ITEM_LOCKED && ($event['mode'] == 'reply' || $event['mode'] == 'quote'))
 		{
 			trigger_error('TOPIC_LOCKED');
 		}

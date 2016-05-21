@@ -1,0 +1,23 @@
+{
+	"name": "token07/lockedmeanslocked",
+	"type": "phpbb-extension",
+	"description": "Prevents anyone with moderator permissions from replying to locked topics",
+	"version": "1.0.0-rc1",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Token07",
+			"email": "admin@corenetwork.us",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.4.14"
+	},
+	"extra": {
+		"display-name": "Locked means locked",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.0"
+		}
+	}
+}

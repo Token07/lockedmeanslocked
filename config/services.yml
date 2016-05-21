@@ -1,0 +1,5 @@
+services:
+    token07.lockedmeanslocked.listener:
+        class: token07\lockedmeanslocked\event\listener
+        tags:
+            - { name: event.listener }
